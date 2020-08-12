@@ -8,7 +8,7 @@ h1 {
   @include font(2.5rem, bold, 1.2);
 
   @include until($sm) {
-    // font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
@@ -16,14 +16,26 @@ h2, .h2 {
   @include font(2.5rem, bold, 1.2);
 
   @include until($sm) {
-    // font-size: 1.75rem;
+    font-size: 1.75rem;
   }
 }
 
 h3 {
-  @include font(1.5rem, 400, 1.208);
+  @include font(1.5rem, bold, 1.208);
+
+  @include until($sm) {
+    font-size: 1.25rem;
+  }
 }
 
 p {
   @include font(1rem, 400, 1.1875);
+}
+
+.muted {
+  color: $muted-color;
+}
+
+.large {
+  @include font(1.125rem, 400, 1.22);
 }

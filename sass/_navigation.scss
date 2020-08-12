@@ -6,7 +6,7 @@
     height: 122px;
 
     @include until($lg) {
-      // height: 92px;
+      height: 92px;
       // background: rgba(0,0,0,0.05);
     }
   }
@@ -19,7 +19,7 @@
       max-width: 181px;
 
       @include until($lg) {
-        // max-width: 80px;
+        max-width: 120px;
       }
     }
   }

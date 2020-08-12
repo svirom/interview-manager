@@ -1,0 +1,33 @@
+/* how it works section */
+.how-it-works {
+  padding-top: 2.25rem;
+}
+
+.how-card {
+  text-align: center;
+
+  &-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14.375rem;
+    padding: 0 0.5rem;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &-counter {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    width: 2.125rem;
+    height: 2.125rem;
+    @include font(1.0625rem, bold, 2.125rem);
+    color: #fff;
+    // line-height: 2.125rem;
+    border-radius: 50%;
+    background-color: $btn-red;
+  }
+}
