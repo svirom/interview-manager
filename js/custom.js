@@ -1,20 +1,15 @@
 $(document).ready(function() {
 
-  // wistia custom button play
-  window._wq = window._wq || [];
-  _wq.push({
-    id: "4j5wwfsko0", onReady: function (video) {}
-  });
+  // Video Button
+	$(document).on("click", ".video-button", function() {
+		var $video = $(this).closest('.video-section').find('.video-wrapper iframe');
+		var src = $video.attr('src');
+		var videoWrapper = $(this).closest('.intro-video').find('.video-bkgr');
+		var buttonWrapper = $(this).closest('.button-wrapper');
 
-  $(".wistia-play").click(function (e) {
-    e.preventDefault();
-    $('.wistia-btn-wrapper').fadeOut("slow");
-
-    _wq.push({
-      id: "4j5wwfsko0", onReady: function (video) {
-        video.play();
-      }
-    });
-  })
+		$video.attr('src', src + '&autoplay=1');
+		videoWrapper.css("display", "none");
+		buttonWrapper.css("display", "none");
+	});
 
 })

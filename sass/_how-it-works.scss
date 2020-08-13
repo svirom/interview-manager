@@ -3,6 +3,11 @@
   padding-top: 2.25rem;
 }
 
+.how-it-before,
+.how-it-after {
+  padding-bottom: 3.0625rem;
+}
+
 .how-card {
   text-align: center;
 
@@ -19,6 +24,10 @@
     }
   }
 
+  &-content {
+    padding-top: 1rem;
+  }
+
   &-counter {
     display: inline-block;
     margin-bottom: 0.75rem;
@@ -29,5 +38,12 @@
     // line-height: 2.125rem;
     border-radius: 50%;
     background-color: $btn-red;
+
+    &.how-card-check {
+      background-color: #B7F9D2;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.15385L5.9 10L15 1' stroke='%2355CE87' stroke-width='2'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
