@@ -8,7 +8,8 @@ $(document).ready(function() {
 		var buttonWrapper = $(this).closest('.button-wrapper');
 
 		$video.attr('src', src + '&autoplay=1');
-		videoWrapper.css("display", "none");
+		// videoWrapper.css("display", "none");
+		videoWrapper.removeClass('active');
 		buttonWrapper.css("display", "none");
 	});
 

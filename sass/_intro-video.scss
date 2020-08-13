@@ -6,25 +6,33 @@
 }
 
 .video-bkgr {
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: url('../img/video-wrapper-img.png') center/cover no-repeat;
-  z-index: 10;
+  z-index: -1;
+  @include transition(all, 0.8s);
+
+  &.active {
+    opacity: 1;
+    z-index: 10;
+    @include transition(all, 0.8s);
+  }
 }
 
 .video-section {
   position: relative;
+  flex-basis: 800px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2.25rem auto;
 }
 
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
-  // padding-top: 25px;
   height: 0;
 
   iframe {
@@ -35,20 +43,31 @@
     height: 100%;
   }
 }
+
 .button-wrapper {
   position: absolute;
+  width: 100%;
   top: 50%;
   left: 50%;
-  @include transform(translate(-50%, -50px));
+  @include transform(translate(-50%, -36px));
   text-align: center;
+  color: #fff;
   z-index: 11;
 }
 
 .video-button {
-  margin: 0 auto;
+  margin: 0 auto 1rem;
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
-  background-color: $btn-red;
+  box-shadow: 0px 7px 23px $green-shadow;
   cursor: pointer;
+  background-color: $btn-red;
+  background-image: url("data:image/svg+xml,%3Csvg width='19' height='21' viewBox='0 0 19 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 8.76795C19.3333 9.53775 19.3333 11.4623 18 12.2321L3.75 20.4593C2.41667 21.2291 0.749999 20.2668 0.749999 18.7272L0.75 2.27276C0.75 0.733156 2.41667 -0.229094 3.75 0.540707L18 8.76795Z' fill='white'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-color: darken($btn-red, 5%);
+  }
 }
