@@ -647,12 +647,17 @@ li {
   padding-bottom: 3.125rem;
 }
 
+@media screen and (max-width: 991px) {
+  .pricing {
+    padding-top: 1.25rem;
+  }
+}
+
 .pricing-card {
   position: relative;
   border: 1px solid #EBF2EE;
   border-radius: 1.25rem;
   background-color: #fff;
-  cursor: pointer;
 }
 
 .pricing-card::before {
@@ -685,13 +690,38 @@ li {
   background-image: url("../img/pricing-icon-4.png");
 }
 
-.pricing-card:hover {
+.pricing-card.popular {
   background-color: rgba(197, 241, 215, 0.1);
 }
 
+.pricing-card.popular .pricing-body::after {
+  position: absolute;
+  display: block;
+  content: 'POPULAR';
+  padding: 6px 28px;
+  top: -6px;
+  right: 2px;
+  -webkit-transform: translate(50%, -50%) rotate(45deg);
+  transform: translate(50%, -50%) rotate(45deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #FDC0C5;
+  background-color: #D9616B;
+}
+
+@media screen and (max-width: 991px) {
+  .pricing-card {
+    margin-top: 4.5rem;
+  }
+}
+
 .pricing-body {
+  position: relative;
   padding: 3.75rem 1rem 1.75rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .pricing-body .pricing-title {
@@ -709,5 +739,94 @@ li {
   margin-bottom: 0.6875rem;
 }
 
+.pricing-body .pricing-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.pricing-body .pricing-amount-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.pricing-body .pricing-btn {
+  padding-top: 1.5rem;
+}
+
+.pricing-body .pricing-btn .btn {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 /* footer (incl get-in-touch) */
+.main-footer {
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .main-footer {
+    padding-top: 1rem;
+  }
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo img {
+  max-width: 181px;
+}
+
+.footer-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-widget p {
+  margin-bottom: 0;
+}
+
+.footer-widget .widget-title {
+  font-size: 1.125rem;
+}
+
+.footer-widget .widget-list a {
+  color: #415B6A;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-widget {
+    text-align: center;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+}
 /*# sourceMappingURL=main.css.map */

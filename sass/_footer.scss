@@ -1,1 +1,44 @@
 /* footer (incl get-in-touch) */
+.main-footer {
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+
+  @include until($md) {
+    padding-top: 1rem;
+  }
+}
+
+.footer-logo {
+  text-align: center;
+
+  img {
+    max-width: 181px;
+  }
+}
+
+.footer-widget {
+  display: flex;
+  justify-content: center;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .widget-title {
+    font-size: 1.125rem;
+  }
+
+  .widget-list {
+    a {
+      color: $main-color;
+    }
+  }
+
+  @include until($md) {
+    text-align: center;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+}

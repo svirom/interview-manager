@@ -2,6 +2,10 @@
 .pricing {
   padding-top: 3.125rem;
   padding-bottom: 3.125rem;
+
+  @include until($lg) {
+    padding-top: 1.25rem;
+  }
 }
 
 .pricing-card {
@@ -9,7 +13,6 @@
   border: 1px solid #EBF2EE;
   border-radius: $border-radius-pricing;
   background-color: #fff;
-  cursor: pointer;
 
   &::before {
     position: absolute;
@@ -48,14 +51,37 @@
     }
   }
 
-  &:hover {
+  &.popular {
     background-color: rgba(#C5F1D7, 0.1);
+
+    .pricing-body {
+      &::after {
+        position: absolute;
+        display: block;
+        content: 'POPULAR';
+        padding: 6px 28px;
+        top: -6px;
+        right: 2px;
+        @include transform(translate(50%, -50%) rotate(45deg));
+        transform-origin: top left;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: #FDC0C5;
+        background-color: $btn-red;
+      }
+    }
+  }
+
+  @include until($lg) {
+    margin-top: 4.5rem;
   }
 }
 
 .pricing-body {
+  position: relative;
   padding: 3.75rem 1rem 1.75rem;
   text-align: center;
+  overflow: hidden;
 
   .pricing-title {
     font-size: 1rem;
@@ -69,6 +95,31 @@
 
     li {
       margin-bottom: 0.6875rem;
+    }
+  }
+
+  .pricing-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font(2.5rem, bold, 1.2);
+  }
+
+  .pricing-amount-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .pricing-btn {
+    padding-top: 1.5rem;
+
+    .btn {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 }
