@@ -39,3 +39,7 @@ p {
 .large {
   @include font(1.125rem, 400, 1.22);
 }
+
+a {
+  word-wrap: break-word;
+}

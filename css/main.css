@@ -56,6 +56,10 @@ p {
   line-height: 1.22;
 }
 
+a {
+  word-wrap: break-word;
+}
+
 /* base & button styles */
 ol,
 ul,
