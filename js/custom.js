@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+	// smooth scroll anchor #
+	$('.nav-link[href^="#"]').bind('click.smoothscroll', function(e) {
+		var target = $(this.hash);
+		e.preventDefault();
+
+		if (target) {
+			$('html, body').stop().animate({
+				'scrollTop': target.offset().top
+			   }, 800, 'swing', function() {
+			});
+		}
+		
+	});
+
   // Video Button
 	$(document).on("click", ".video-button", function() {
 		var $video = $(this).closest('.video-section').find('.video-wrapper iframe');
